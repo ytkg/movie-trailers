@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190201161248) do
+ActiveRecord::Schema.define(version: 20190201163434) do
 
   create_table "channels", id: :string, force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20190201161248) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["id"], name: "sqlite_autoindex_channels_1", unique: true
+  end
+
+  create_table "videos", id: :string, force: :cascade do |t|
+    t.string "channel_id"
+    t.string "title"
+    t.string "thumbnail_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["id"], name: "sqlite_autoindex_videos_1", unique: true
   end
 
 end
