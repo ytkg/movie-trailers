@@ -32,5 +32,7 @@ function onPlayerStateChange(event) {
   if (ytStatus == YT.PlayerState.ENDED) {
     var video_id = video_ids[Math.floor(Math.random() * video_ids.length)]
     ytPlayer.loadVideoById(video_id)
+  } else if (ytStatus == YT.PlayerState.PLAYING) {
+    document.getElementsByClassName('play_button')[0].style.display = 'none';
   }
 }

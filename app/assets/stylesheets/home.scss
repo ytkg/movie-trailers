@@ -23,3 +23,37 @@
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
 }
+
+.play_button{
+  position: fixed;
+  top: calc(50vh - 50px);
+  left: calc(50vw - 50px);
+  color: #000;
+}
+
+.play_button::before, .play_button::after {
+  position: absolute;
+  content: "";
+}
+
+.play_button::before {
+  width: 140px;
+  height: 100px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  background: #fff;
+}
+
+.play_button::after {
+  top: 25px;
+  left: 50px;
+  border: 25px solid transparent;
+  border-left: 50px solid #000;
+}
+.play_button:hover:before {
+  background: #ddd;
+}
+
+.play_button:hover:after {
+  border-left: 50px solid #222;
+}
