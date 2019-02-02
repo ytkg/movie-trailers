@@ -6,11 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
   </head>
 
   <body>
     <div class="container">
       <%= yield %>
     </div>
+    <footer class='fixed-bottom mb-2 text-center'>
+      <%= link_to 'Movie Trailers by wao:', 'https://wao.bz/', class: 'text-light', target: '_blank' %>
+    </footer>
   </body>
 </html>
