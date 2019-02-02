@@ -11,3 +11,15 @@
   height: calc(100vh + 110px);
   pointer-events: none;
 }
+
+#mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+}
