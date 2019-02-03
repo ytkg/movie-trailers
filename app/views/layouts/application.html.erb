@@ -4,6 +4,12 @@
     <title>Movie Trailers</title>
     <%= csrf_meta_tags %>
 
+    <meta property="og:title" content="Movie Trailers" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Infinitely play movie trailer." />
+    <meta property="og:url" content="<%= request.base_url %>" />
+    <meta property="og:site_name" content="Movie Trailers" />
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
