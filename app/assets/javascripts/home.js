@@ -6,12 +6,13 @@ tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+var video_index = 0;
 var ytPlayer;
 function onYouTubeIframeAPIReady() {
   ytPlayer = new YT.Player(
     'tailers_player',
     {
-      videoId: video_ids[0],
+      videoId: video_ids[video_index],
       playerVars: {
         autoplay: 1,
         controls: 0,
@@ -30,7 +31,11 @@ function onYouTubeIframeAPIReady() {
 function onPlayerStateChange(event) {
   var ytStatus = event.data;
   if (ytStatus == YT.PlayerState.ENDED) {
-    var video_id = video_ids[Math.floor(Math.random() * video_ids.length)]
+    video_index++;
+    if (video_index >= video_ids.length) {
+      video_index = 0;
+    }
+    var video_id = video_ids[video_index];
     ytPlayer.loadVideoById(video_id)
   } else if (ytStatus == YT.PlayerState.PLAYING) {
     document.getElementsByClassName('play_button')[0].style.display = 'none';
