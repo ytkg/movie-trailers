@@ -1,24 +1,25 @@
-# README
+Movie Trailers
+========
+Infinitely play movie trailer. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://movie-trailers.work/
 
-Things you may want to cover:
+## Deployment on heroku
+```
+# One time only
+heroku create [applicatin name]
+heroku config:add TZ=Asia/Tokyo
+heroku config:set GOOGLE_API_KEY="[GOOGLE_API_KEY]"
 
-* Ruby version
+git push heroku master
+heroku run rails db:migrate
+```
 
-* System dependencies
+### Add trailers data
+```
+# add channel
+heroku run rails channel:add[CHANNEL_ID]
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# add video
+heroku run rails video:fetch
+```
