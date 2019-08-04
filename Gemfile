@@ -30,6 +30,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
 gem 'google-api-client'
+gem 'icalendar'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
