@@ -5,3 +5,8 @@
 <div id='tailers_player'></div>
 <div id='mask'></div>
 <a href='javascript:void(0);' class="play_button" onclick='ytPlayer.playVideo();'></a>
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  var brightness = parseInt(urlParams.get('brightness'));
+  document.getElementById('mask').style.background = 'rgba(0, 0, 0, ' + (100 - brightness) + '%)';
+</script>
