@@ -17,9 +17,9 @@ heroku run rails db:migrate
 
 ### Add trailers data
 ```
-# add channel
-heroku run rails channel:add[CHANNEL_ID]
+# fetch movies
+heroku run rails movie:fetch
 
-# add video
-heroku run rails video:fetch
+# fetch trailers
+heroku run rails trailer:fetch
 ```
