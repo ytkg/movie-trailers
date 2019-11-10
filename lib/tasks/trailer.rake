@@ -5,7 +5,8 @@ namespace :trailer do
     client = Google::Apis::YoutubeV3::YouTubeService.new
     client.key = ENV['GOOGLE_API_KEY']
 
-    Movie.all.each do |movie|
+    movies = Movie.where('publish_date >= ?', 1.month.ago)
+    movies.each do |movie|
       searches_result = client.list_searches(:snippet, q: "#{movie.title} 予告", type: 'video', max_results: 50)
 
       next if searches_result.items.blank?
