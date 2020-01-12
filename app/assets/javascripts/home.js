@@ -23,7 +23,7 @@ function onYouTubeIframeAPIReady() {
       },
       events: {
         'onStateChange': onPlayerStateChange,
-        'onError': onPlayerStateChange
+        'onError': changeVideo
       }
     }
   );
@@ -32,13 +32,17 @@ function onYouTubeIframeAPIReady() {
 function onPlayerStateChange(event) {
   var ytStatus = event.data;
   if (ytStatus == YT.PlayerState.ENDED) {
-    video_index++;
-    if (video_index >= video_ids.length) {
-      video_index = 0;
-    }
-    var video_id = video_ids[video_index];
-    ytPlayer.loadVideoById(video_id)
+    changeVideo();
   } else if (ytStatus == YT.PlayerState.PLAYING) {
     document.getElementsByClassName('play_button')[0].style.display = 'none';
   }
+}
+
+function changeVideo() {
+  video_index++;
+  if (video_index >= video_ids.length) {
+    video_index = 0;
+  }
+  var video_id = video_ids[video_index];
+  ytPlayer.loadVideoById(video_id)
 }
