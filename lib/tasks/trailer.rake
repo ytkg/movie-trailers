@@ -24,4 +24,8 @@ namespace :trailer do
       end
     end
   end
+
+  task delete: :environment do
+    Trailer.where.not(movie_id: Movie.active.ids).delete_all
+  end
 end
