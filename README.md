@@ -15,11 +15,14 @@ git push heroku master
 heroku run rails db:migrate
 ```
 
-### Add trailers data
+### Update trailers data
 ```
 # fetch movies
 heroku run rails movie:fetch
 
 # fetch trailers
 heroku run rails trailer:fetch
+
+# delete old trailers
+heroku run rails trailer:delete
 ```
