@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :movies, only: [:index]
-  resources :trailers, only: [:index]
+  resources :trailers, only: [:index] do
+    collection do
+      get :sample
+    end
+  end
 end
